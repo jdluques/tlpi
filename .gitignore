@@ -1,0 +1,6 @@
+tlpi-resources/
+
+**/bin/
+**/generated/
+
+*.o
