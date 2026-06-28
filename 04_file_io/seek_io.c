@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
   if (argc < 3) {
     fprintf(stderr, "Error: insufficient arguments.\n");
-    printf("Usage: %s <input_path> <io_op ...>\n", argv[0]);
+    printf("Usage: %s <input_path> <io_op>...\n", argv[0]);
     return EXIT_FAILURE;
   }
 
