@@ -39,10 +39,9 @@ int main(int argc, char *argv[])
   char buf[BUF_SIZE];
   while (1) {
     ssize_t num_read = read(input_fd, buf, BUF_SIZE);
-    int saved_errno = errno;
     
     if (num_read == -1) {
-      if (saved_errno == EINTR) {
+      if (errno == EINTR) {
         continue;
       }
 
@@ -63,10 +62,9 @@ int main(int argc, char *argv[])
         buf + total_written,
         num_read - total_written
       );
-      
+
       if (num_written == -1){
-        saved_errno = errno;
-        if (saved_errno == EINTR) {
+        if (errno == EINTR) {
           continue;
         }
 
